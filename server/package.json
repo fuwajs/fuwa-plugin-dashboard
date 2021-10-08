@@ -1,0 +1,21 @@
+{
+  "name": "fuwa-dash-server",
+  "version": "1.0.0",
+  "description": "Websocket server for fuwa.js dashboard",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc -p ."
+  },
+  "repository": "https://github.com/fuwajs/fuwa-plugin-dashboard",
+  "author": "Artrix",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^16.10.3",
+    "@types/ws": "^8.2.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "ws": "^8.2.3"
+  }
+}
