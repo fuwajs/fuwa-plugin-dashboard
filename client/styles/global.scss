@@ -1,0 +1,22 @@
+// https://coolors.co/0e0e1b-f2f2f8-434389-4b4b95-5a5baf-ffffff
+
+:root {
+    --text: #0e0e1b;
+    --bg: #f2f2f8;
+    --main-1: #5a5baf;
+    --main-2: #4b4b95;
+    --main-3: #434389;
+}
+
+body,
+html,
+* {
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text);
+}

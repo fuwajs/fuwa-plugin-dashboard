@@ -1,9 +1,18 @@
+import { Nav, NavItem } from '../components/Nav';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../styles/nav.scss';
+import '../styles/global.scss';
+const ws = new WebSocket('ws://localhost:9094');
 
-const Index = () => <>
-    HI
-</>;
+const Index = () => {
+    const navItems = [<NavItem icon="User" text="User info" />];
+    return (
+        <>
+            <Nav type="left">{...navItems}</Nav>
+        </>
+    );
+};
 
 ReactDOM.render(
     <React.StrictMode>

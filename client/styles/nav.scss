@@ -1,0 +1,35 @@
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    * {
+        color: white;
+    }
+    background-color: var(--main-1);
+    --primary: 100vw;
+    --secondary: 6rem;
+}
+.nav[aria-expanded='true'] {
+    --secondary: 12rem;
+}
+.nav-left {
+    .nav-menu {
+        display: none;
+    }
+    top: 0;
+    left: 0;
+    height: var(--primary);
+    width: var(--secondary);
+    transition: width 300ms;
+    .nav-item {
+        a {
+            svg {
+                width: 3rem;
+                height: 3rem;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+}

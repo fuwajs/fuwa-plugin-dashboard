@@ -5,7 +5,6 @@ const { parentPort: parent, isMainThread } = require('worker_threads');
 const server = http.createServer();
 
 function start(port) {
-    console.log('I was ran');
     server.listen(port, () => console.log(`Server running at port ${port}`));
 }
 server.on('request', (req, res) => {
