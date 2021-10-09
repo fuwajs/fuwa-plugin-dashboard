@@ -10,6 +10,7 @@ export interface NavItemProps {
     onClick?(): any;
     icon: keyof typeof Icons;
     link?: string;
+    selected?: boolean;
     text: string;
 }
 
@@ -29,12 +30,12 @@ export const Nav = ({ children, type }: NavProps) => {
         </>
     );
 };
-export const NavItem = ({ link, onClick, icon, text }: NavItemProps) => {
+export const NavItem = ({ link, onClick, selected, icon, text }: NavItemProps) => {
     const Icon = Icons[icon];
 
     return (
         <>
-            <li className="nav-item">
+            <li className="nav-item" aria-current={selected ?? false}>
                 <a href={link} onClick={onClick}>
                     <Icon />
                     <span>{text}</span>

@@ -1,16 +1,24 @@
 .nav {
-    position: relative;
+    position: sticky;
+    overflow: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
     * {
         color: white;
     }
     background-color: var(--main-1);
-    --primary: 100vw;
     --secondary: 6rem;
 }
 .nav[aria-expanded='true'] {
     --secondary: 12rem;
+    li a {
+        span {
+            opacity: 1 !important;
+            visibility: visible !important;
+            position: relative !important;
+        }
+    }
 }
 .nav-left {
     .nav-menu {
@@ -18,17 +26,48 @@
     }
     top: 0;
     left: 0;
-    height: var(--primary);
+    height: 100vh;
     width: var(--secondary);
     transition: width 300ms;
+    .nav-items {
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .nav-item[aria-current='true']::before {
+        content: '';
+        background: var(--main-3);
+        position: absolute;
+        background-color: var(--text);
+        width: 10%;
+        height: 3rem;
+        top: 0px;
+        left: -1.5rem;
+        border-radius: 0% 50% 50% 0;
+    }
     .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         a {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
             svg {
                 width: 3rem;
                 height: 3rem;
             }
             span {
-                display: none;
+                margin-left: 1rem;
+                position: absolute;
+                visibility: hidden;
+                font-weight: bold;
+                opacity: 0;
+                transition: opacity 400ms 600ms;
             }
         }
     }
